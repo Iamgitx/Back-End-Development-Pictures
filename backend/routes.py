@@ -10,6 +10,8 @@ data: list = json.load(open(json_url))
 ######################################################################
 # RETURN HEALTH OF THE APP
 ######################################################################
+@app.route("/picture")          #_#
+    get_pictures()
 
 
 @app.route("/health")
