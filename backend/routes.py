@@ -10,8 +10,6 @@ data: list = json.load(open(json_url))
 ######################################################################
 # RETURN HEALTH OF THE APP
 ######################################################################
-@app.route("/picture")          #_#
-    get_pictures()
 
 
 @app.route("/health")
@@ -37,7 +35,7 @@ def count():
 ######################################################################
 @app.route("/picture", methods=["GET"])
 def get_pictures():
-    pass
+    return jsonify(data), 200
 
 ######################################################################
 # GET A PICTURE
@@ -71,3 +69,7 @@ def update_picture(id):
 @app.route("/picture/<int:id>", methods=["DELETE"])
 def delete_picture(id):
     pass
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
